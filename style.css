@@ -390,7 +390,26 @@ body {
   .resume .experience, .resume .education {
     margin-bottom: 30px;
   }
-  
+  .experience {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .experience li {
+    text-align: left;
+  }
+  .education{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .education li{
+  text-align: left;
+ }
   .resume h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
