@@ -343,7 +343,7 @@ body {
     background: #f9f9f9; /* Light gray background */
     color: #000; /* Black text */
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px #ff0000;
   }
   
   .project-item img {
@@ -497,3 +497,133 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 } 
+
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.contact-section {
+  background: linear-gradient(135deg, #f8f9fa, #e0e7ff);
+  padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.interactive-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  background: #ff0000;
+  border-radius: 50%;
+  animation: floatUp 5s infinite ease-in-out;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-200%) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.container1 {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px #ff0000;
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.form-input, .form-textarea {
+  width: 98%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus, .form-textarea:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 5px #ff0000;
+}
+
+.form-textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.btn-submit {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #cc0000;
+}
+
+.success-message, .error-message {
+  display: none;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.success-message {
+  color: #28a745;
+  background: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: #dc3545;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}

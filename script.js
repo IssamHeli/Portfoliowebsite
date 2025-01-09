@@ -77,3 +77,51 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+
+const interactiveBackground = document.getElementById('interactiveBackground');
+
+    function createBubble() {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+
+      const size = Math.random() * 60 + 20; // Random size between 20px and 80px
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+
+      bubble.style.left = `${Math.random() * 100}%`; // Random horizontal position
+      bubble.style.bottom = '-80px'; // Start below the visible area
+      bubble.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random duration between 5s and 10s
+
+      interactiveBackground.appendChild(bubble);
+
+      // Remove bubble after animation ends
+      bubble.addEventListener('animationend', () => {
+        bubble.remove();
+      });
+    }
+
+    // Generate bubbles periodically
+    setInterval(createBubble, 500);
+
+    // Handle form submission
+    document.getElementById('contactForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const successMessage = document.getElementById('successMessage');
+      const errorMessage = document.getElementById('errorMessage');
+
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+
+      if (name && email && message) {
+        successMessage.style.display = 'block';
+        document.getElementById('contactForm').reset();
+      } else {
+        errorMessage.style.display = 'block';
+      }
+    });

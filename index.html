@@ -141,22 +141,32 @@
           <!-- Add more education entries as needed -->
         </ul>
       </div>
-  
-      <section id="contact" class="contact">
-        <div class="container">
-          <h2>Contact Me</h2>
-          <p>If you'd like to get in touch, feel free to send me a message!</p>
-          <div class="contact-details">
-            <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a></p>
-            <p>GitHub: <a href="https://github.com/yourprofile" target="_blank">GitHub Profile</a></p>
-          </div>
-          <a href="mailto:youremail@example.com" class="btn">Send a Message</a>
-        </div>
-      </section>
-      
     </div>
   </section>
+  
+  <section id="contact" class="contact-section">
+    <div class="interactive-background" id="interactiveBackground"></div>
+    <div class="container1">
+      <h2 class="section-title">Get in Touch</h2>
+      <form class="contact-form" id="contactForm">
+        <div class="input-container">
+          <input id="name" name="name" type="text" class="form-input" placeholder="Your Name *" required>
+        </div>
+        <div class="input-container">
+          <input id="email" name="email" type="email" class="form-input" placeholder="Your Email *" required>
+        </div>
+        <div class="input-container">
+          <textarea id="message" name="message" class="form-textarea" placeholder="Your Message *" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+      <div class="success-message" id="successMessage">Your message has been sent successfully!</div>
+      <div class="error-message" id="errorMessage">There was an error sending your message. Please try again.</div>
+    </div>
+  </section>
+
+
+
   <footer>
     <div class="footer-container">
         <p>&copy; 2025 Issam Heli Portfolio. All rights reserved.</p>
