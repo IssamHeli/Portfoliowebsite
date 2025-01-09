@@ -1,0 +1,498 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff; /* White background */
+    color: #000; /* Black text */
+    line-height: 1.6;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000; /* Black navbar */
+    color: #fff;
+    padding: 10px 5%;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #ff0000; 
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    background-color: #ff0000; /* Red highlight on hover */
+    color: #fff;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .hamburger:hover{
+    color:#ff0000;
+  }
+  
+  .hamburger span {
+    display: block;
+    height: 4px;
+    width: 30px;
+    background: #fff;
+    margin: 5px auto;
+    border-radius: 2px;
+  }
+  
+  /* Sidebar Menu (right side) */
+  .sidebar {
+    position: fixed;
+    top: 50px;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: #000; /* Black background */
+    color: #fff;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+.sidebar.active {
+  right: 0;
+}
+
+
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-links li {
+    margin: 20px 0;
+  }
+  
+  .sidebar-links a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 3rem;
+    transition: color 0.3s ease;
+  }
+  .sidebar-links a:hover {
+    color: #ff0000;
+  }
+  
+  /* Responsive Design for Mobile */
+  @media (max-width: 768px) {
+    /* Show hamburger menu */
+    .hamburger {
+      display: flex;
+    }
+  
+    /* Hide nav-links, as sidebar will be used */
+    .nav-links {
+      display: none;
+    }
+  
+    /* Show sidebar when active */
+    .sidebar.active {
+      right: 0;  /* Slide the sidebar in from the right */
+    }
+  }
+
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff; /* White background */
+    color: #000; /* Black text */
+    padding: 20px;
+  }
+  
+  .hero-content {
+    z-index: 2;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #000;
+}
+  
+.hero .highlight {
+  color: #ff0000; /* Red highlight */
+}
+.hero .btn-primary {
+  display: inline-block;
+  background: #ff0000; /* Red button */
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+  background: #cc0000; /* Darker red on hover */
+}
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #333; /* Dark gray for contrast */
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s, background 0.3s;
+  }
+  
+  .btn-primary {
+    background: #b00020; /* Accent color */
+  }
+  
+  .btn-primary:hover {
+    background: #880017; /* Darker accent on hover */
+    transform: scale(1.1);
+  }
+  
+  .btn-alt {
+    background: #000; /* Black button */
+    color: #fff; /* White text */
+  }
+  
+  .btn-alt:hover {
+    background: #333; /* Dark gray button on hover */
+    transform: scale(1.1);
+  }
+  
+  /* Full-screen canvas */
+  #hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    background: #fff; /* Set canvas background to white */
+  }
+  
+
+
+
+  .about {
+    padding: 50px 5%;
+    background: #f9f9f9; /* Light gray background */
+    color: #000; /* Black text */
+    text-align: center;
+}
+  
+.about h2 {
+  font-size: 2rem;
+  color: #000;
+}
+
+.about .profile-text .highlight {
+  color: #ff0000; /* Red highlight */
+}
+
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #ff0000;
+    text-transform: uppercase;
+  }
+  
+  .profile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .profile-img-container {
+    flex: 1 1 250px;
+    text-align: center;
+  }
+  
+  .profile-img {
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow:5px 5px 20px black;
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-img:hover {
+    transform: scale(1.05);
+  }
+  
+  .profile-text {
+    flex: 2 1 300px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .profile-text .highlight {
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .profile-text .btn-primary {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .profile-text .btn-primary:hover {
+    background: #cc0000; /* Darker red on hover */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .profile {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .profile-img-container,
+    .profile-text {
+      flex: 1 1 auto;
+    }
+  }
+  
+
+  /* Projects Section */
+.projects {
+    padding: 50px 10%;
+    background: #fff;
+    color: #000;
+  }
+  .projects h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .project-item {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f9f9f9; /* Light gray background */
+    color: #000; /* Black text */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .project-item h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+  
+  .project-item .btn {
+    display: inline-block;
+    background: #ff0000; /* Red button */
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .project-item .btn:hover {
+    background: #cc0000; /* Darker red on hover */
+  }
+/* Resume Section */
+.resume {
+  padding: 50px 5%;
+  background: #f9f9f9; /* Light gray background */
+  color: #000; /* Black text */
+  text-align: center;
+  }
+  
+  .resume h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .resume .experience, .resume .education {
+    margin-bottom: 30px;
+  }
+  
+  .resume h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .resume ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .resume ul li {
+    margin-bottom: 15px;
+  }
+  
+  .resume ul li strong {
+    font-size: 1.2rem;
+  }
+  
+  .resume .btn {
+    background: #4a90e2;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resume .btn:hover {
+    background: #333;
+  }
+/* Contact Section */
+.contact {
+  padding: 50px 5%;
+  background: #fff; /* White background */
+  color: #000; /* Black text */
+  text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact-details {
+    margin-bottom: 30px;
+  }
+  
+  .contact-details a {
+    color: #4a90e2;
+    text-decoration: none;
+  }
+  
+  .contact .btn {
+    display: inline-block;
+    background: #ff0000; /* Red button */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  
+  .contact .btn:hover {
+    background: #cc0000; /* Darker red on hover */
+  }
+      
+  /* Responsive Hero Section */
+@media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+  
+    .hero-buttons .btn {
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+  
+    .hero-buttons .btn-alt {
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+  }
+ /* Footer Section */
+footer {
+  padding: 20px 5%;
+  background: #000; /* Black footer */
+  color: #fff; /* White text */
+  text-align: center;
+  border-top: 2px solid #ff0000; /* Red border for emphasis */
+}
+
+footer a {
+  color: #ff0000; /* Red links */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+} 
