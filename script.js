@@ -1,11 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const sidebar = document.querySelector('.sidebar');
-  
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('active');  // Toggle the 'active' class to show/hide the sidebar
+  const hamburger = document.querySelector('.hamburger');
+  const sidebar = document.querySelector('.sidebar');
+  const sidebarLinks = document.querySelectorAll('.sidebar-links a');  // Select all sidebar links
+
+  // Toggle the 'active' class on hamburger click to show/hide the sidebar
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+  });
+
+  // Add event listener to hide the sidebar when a link is clicked
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      sidebar.classList.remove('active');  // Remove the 'active' class to hide the sidebar
     });
   });
+});
  
 
   const canvas = document.getElementById("hero-canvas");
