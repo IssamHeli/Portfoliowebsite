@@ -509,10 +509,9 @@ canvas {
 }
 
 .contact-section {
-  background: linear-gradient(135deg, #f8f9fa, #e0e7ff);
   padding: 50px 20px;
   position: relative;
-  overflow: hidden;
+  overflow:auto;
 }
 
 .interactive-background {
