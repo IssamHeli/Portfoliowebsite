@@ -31,10 +31,13 @@ class Particle {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.size = Math.random() * 5 + 1;
-    this.speedX = Math.random() * 2 - 1;
-    this.speedY = Math.random() * 2 - 1;
-    this.color = `rgba(0, 0, 0, ${Math.random()})`; // Black particles
+    this.size = Math.random() * 10 + 1;
+    this.speedX = Math.random() * 3 - 1;
+    this.speedY = Math.random() * 3 - 1;
+    this.color = Math.random() < 0.5 
+    ? `rgba(255, 0, 0, ${Math.random()})`  // Red with random transparency
+    : `rgba(255, 255, 255, ${Math.random()})`; 
+
   }
 
   update() {
@@ -134,3 +137,28 @@ const interactiveBackground = document.getElementById('interactiveBackground');
         errorMessage.style.display = 'block';
       }
     });
+
+// Trigger animations on scroll for experience and education items
+window.addEventListener('scroll', () => {
+  const elements = document.querySelectorAll('.experience-item, .education-item , .about , .project-item, .contact-section');
+
+  elements.forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Check if the element is in view
+    if (rect.top < windowHeight - 50 && rect.bottom > 0) {
+      el.classList.add('in-view'); // Add animation class when in view
+    } else {
+      el.classList.remove('in-view'); // Remove animation class when out of view
+    }
+  });
+});
+
+// Smooth scroll for sections
+document.querySelectorAll('.resume-heading').forEach((heading) => {
+  heading.addEventListener('click', (event) => {
+    const section = event.target.closest('.resume-block');
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});

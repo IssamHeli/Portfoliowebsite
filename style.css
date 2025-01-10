@@ -2,9 +2,10 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #fff; /* White background */
-    color: #000; /* Black text */
+    background: black; /* White background */
+    color: white; /* Black text */
     line-height: 1.6;
+    scrollbar-shadow-color: #ff0000;
   }
   
   /* Navbar Styles */
@@ -72,7 +73,7 @@ body {
   /* Sidebar Menu (right side) */
   .sidebar {
     position: fixed;
-    top: 50px;
+    top: 68px;
     right: -300px;
     width: 300px;
     height: 100%;
@@ -139,8 +140,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #fff; /* White background */
-    color: #000; /* Black text */
+    background: black; /* White background */
+    color: white; /* Black text */
     padding: 20px;
   }
   
@@ -151,7 +152,7 @@ body {
   .hero h1 {
     font-size: 2.5rem;
     margin: 0;
-    color: #000;
+    color: white;
 }
   
 .hero .highlight {
@@ -176,7 +177,7 @@ body {
   .hero p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: #333; /* Dark gray for contrast */
+    color: white; /* Dark gray for contrast */
   }
   
   .hero-buttons {
@@ -188,6 +189,7 @@ body {
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     color: #fff;
+    background: whitesmoke;
     font-weight: bold;
     border-radius: 5px;
     transition: transform 0.3s, background 0.3s;
@@ -203,25 +205,25 @@ body {
   }
   
   .btn-alt {
-    background: #000; /* Black button */
-    color: #fff; /* White text */
+    background: white; /* Black button */
+    color: black; /* White text */
   }
   
   .btn-alt:hover {
-    background: #333; /* Dark gray button on hover */
+    background: #d67474; /* Dark gray button on hover */
     transform: scale(1.1);
   }
   
   /* Full-screen canvas */
   #hero-canvas {
     position: absolute;
-    top: 0;
+    top: 68px;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
     pointer-events: none;
-    background: #fff; /* Set canvas background to white */
+    background: black; /* Set canvas background to white */
   }
   
 
@@ -229,14 +231,21 @@ body {
 
   .about {
     padding: 50px 5%;
-    background: #f9f9f9; /* Light gray background */
-    color: #000; /* Black text */
+    background: black; /* Light gray background */
+    color: white; /* Black text */
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
-  
+ .about.in-view {
+  opacity: 1;
+  transform: translateY(0);
+ }
+
 .about h2 {
   font-size: 2rem;
-  color: #000;
+  color: white;
 }
 
 .about .profile-text .highlight {
@@ -248,8 +257,9 @@ body {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #ff0000;
+    color: white;
     text-transform: uppercase;
+    margin-bottom: 20px;
   }
   
   .profile {
@@ -267,7 +277,7 @@ body {
   .profile-img {
     max-width: 100%;
     border-radius: 50%;
-    box-shadow:5px 5px 20px black;
+    box-shadow:0px 0px 15px whitesmoke;
     transition: transform 0.3s ease;
   }
   
@@ -279,10 +289,12 @@ body {
     flex: 2 1 300px;
     font-size: 1rem;
     line-height: 1.6;
-    color: #333;
+    color: whitesmoke;
     text-align: left;
   }
-  
+  .intro strong{
+    color: #ff0000;
+  }
   .profile-text .highlight {
     color: #333;
     font-weight: bold;
@@ -322,8 +334,8 @@ body {
   /* Projects Section */
 .projects {
     padding: 50px 10%;
-    background: #fff;
-    color: #000;
+    background: black;
+    color: white;
   }
   .projects h2 {
     font-size: 2rem;
@@ -336,20 +348,28 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
   }
-  
+  .project-item.in-view {
+   
+  opacity: 1;
+  transform: translateY(0); 
+  }
   .project-item {
     margin: 20px 0;
     padding: 20px;
-    background: #f9f9f9; /* Light gray background */
-    color: #000; /* Black text */
+    background: #500a0a; /* Light gray background */
+    color: white; /* Black text */
     border-radius: 5px;
     box-shadow: 0 2px 5px #ff0000;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
   
   .project-item img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+    background: black;
   }
   
   .project-item h3 {
@@ -373,11 +393,15 @@ body {
   .project-item .btn:hover {
     background: #cc0000; /* Darker red on hover */
   }
+
+  .project-item a {
+    margin: 5px;
+  }
 /* Resume Section */
 .resume {
   padding: 50px 5%;
-  background: #f9f9f9; /* Light gray background */
-  color: #000; /* Black text */
+  background: black; /* Light gray background */
+  color: white; /* Black text */
   text-align: center;
   }
   
@@ -428,26 +452,9 @@ body {
     font-size: 1.2rem;
   }
   
-  .resume .btn {
-    background: #4a90e2;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .resume .btn:hover {
-    background: #333;
-  }
+ 
 /* Contact Section */
-.contact {
-  padding: 50px 5%;
-  background: #fff; /* White background */
-  color: #000; /* Black text */
-  text-align: center;
-  }
-  
+
   .contact h2 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -518,19 +525,18 @@ footer a:hover {
 } 
 
 
-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
 
 .contact-section {
   padding: 50px 20px;
   position: relative;
   overflow:auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.contact-section.in-view {
+opacity: 1;
+transform: translateY(0);
 }
 
 .interactive-background {
@@ -568,17 +574,13 @@ canvas {
   position: relative;
   max-width: 800px;
   margin: 0 auto;
-  background: #fff;
+  background: #430808;
+  color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px #ff0000;
   padding: 20px;
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
 
 .contact-form {
   display: flex;
@@ -644,4 +646,142 @@ canvas {
   background: #f8d7da;
   border: 1px solid #f5c6cb;
   border-radius: 4px;
+}
+
+
+
+
+
+.container0 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Resume Section */
+.resume-section {
+  padding: 40px 20px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resume-title {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.resume-block {
+  margin-bottom: 40px;
+}
+
+.resume-heading {
+  font-size: 1.8em;
+  color: white;
+  border-left: 5px solid #ff0000;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+/* Experience and Education Lists */
+.experience-list,
+.education-list {
+  list-style: none;
+  padding: 0;
+  color: white;
+}
+
+.experience-item, .education-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* When in view */
+.experience-item.in-view, .education-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.job-info,
+.education-info {
+  margin-bottom: 10px;
+}
+
+.job-title,
+.degree-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ea9292;
+}
+
+.job-duration,
+.education-duration {
+  font-size: 0.9em;
+  color: #bd9898;
+}
+
+.institution-name {
+  font-style: italic;
+  color: white;
+}
+
+.project-details,
+.education-details {
+  padding-left: 20px;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Social Media Section */
+.social-media {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.social-title {
+  font-size: 1.5em;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons li {
+  display: inline-block;
+}
+
+.social-link {
+  text-decoration: none;
+  color: #c28181;
+  font-size: 1.2em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+  color: #dca3b8;
+  transform: scale(1.1);
+}
+
+/* Font Awesome Icons Styling */
+.social-link i {
+  margin-right: 8px;
 }
