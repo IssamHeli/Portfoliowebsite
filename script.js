@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add event listener to hide the sidebar when a link is clicked
   sidebarLinks.forEach(link => {
     link.addEventListener('click', () => {
-      sidebar.classList.remove('active');  // Remove the 'active' class to hide the sidebar
+      sidebar.classList.remove('active'); // Remove the 'active' class to hide the sidebar
+
+      hamburger.classList.remove('activemenu');
     });
   });
 });
@@ -117,27 +119,7 @@ const interactiveBackground = document.getElementById('interactiveBackground');
     // Generate bubbles periodically
     setInterval(createBubble, 500);
 
-    // Handle form submission
-    document.getElementById('contactForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      const successMessage = document.getElementById('successMessage');
-      const errorMessage = document.getElementById('errorMessage');
-
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'none';
-
-      if (name && email && message) {
-        successMessage.style.display = 'block';
-        document.getElementById('contactForm').reset();
-      } else {
-        errorMessage.style.display = 'block';
-      }
-    });
+    
 
 // Trigger animations on scroll for experience and education items
 window.addEventListener('scroll', () => {
@@ -161,5 +143,39 @@ document.querySelectorAll('.resume-heading').forEach((heading) => {
   heading.addEventListener('click', (event) => {
     const section = event.target.closest('.resume-block');
     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+$(document).ready(function() {
+  $("form").submit(function(event) {
+    event.preventDefault();
+
+    const form = this;
+    const Name = document.getElementById('name').value.trim();
+    const Email = document.getElementById('email').value.trim(); // Fixed missing id
+    const Message = document.getElementById('message').value.trim();
+
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+
+    const userApi = "suHNSJiEMegyzNB31";
+    const templateParams = {
+      from_name: "Contact from Portfolio",
+      TYPE: "Contact",
+      Name: Name,
+      Email: Email,
+      Message: Message
+    };
+
+    emailjs.send("service-contacter-portfo", "Portfolio-TemplateId", templateParams, userApi)
+      .then(function(response) {
+        form.reset();
+        successMessage.style.display = 'block';
+        
+      }, function(error) {
+        errorMessage.style.display = 'block';
+      });
   });
 });
