@@ -29,7 +29,13 @@ body {
     font-size: 1.8rem;
     font-weight: bold;
   }
-  
+  .img-fluid{
+    width: 50px;
+  }
+  .logoimgName{
+    display: flex;
+    gap: 4px;
+  }
   .nav-links {
     list-style: none;
     display: flex;
