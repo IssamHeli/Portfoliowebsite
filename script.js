@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const hamburger = document.querySelector('.hamburger');
+  const hamburger = document.querySelector('.menu');
   const sidebar = document.querySelector('.sidebar');
   const sidebarLinks = document.querySelectorAll('.sidebar-links a');  // Select all sidebar links
 
   // Toggle the 'active' class on hamburger click to show/hide the sidebar
   hamburger.addEventListener('click', () => {
     sidebar.classList.toggle('active');
+    hamburger.classList.toggle('activemenu');
   });
 
   // Add event listener to hide the sidebar when a link is clicked
