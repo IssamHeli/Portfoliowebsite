@@ -78,7 +78,7 @@ body {
   /* Sidebar Menu (right side) */
   .sidebar {
     position: fixed;
-    top: 68px;
+    top: 72px;
     right: -300px;
     width: 300px;
     height: 100vh;
@@ -252,6 +252,7 @@ body {
  .about.in-view {
   opacity: 1;
   transform: translateY(0);
+  transition: 2s;
  }
 
 .about h2 {
@@ -363,6 +364,7 @@ body {
    
   opacity: 1;
   transform: translateY(0); 
+  transition: 2s;
   }
   .project-item {
     margin: 20px 0;
@@ -409,22 +411,7 @@ body {
     margin: 5px;
   }
 /* Resume Section */
-.resume {
-  padding: 50px 5%;
-  background: black; /* Light gray background */
-  color: white; /* Black text */
-  text-align: center;
-  }
-  
-  .resume h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .resume .experience, .resume .education {
-    margin-bottom: 30px;
-  }
+
   .experience {
 
     display: flex;
@@ -445,23 +432,6 @@ body {
    .education li{
   text-align: left;
  }
-  .resume h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .resume ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .resume ul li {
-    margin-bottom: 15px;
-  }
-  
-  .resume ul li strong {
-    font-size: 1.2rem;
-  }
   
  
 /* Contact Section */
@@ -548,8 +518,8 @@ footer a:hover {
 .contact-section.in-view {
 opacity: 1;
 transform: translateY(0);
+transition: 2s;
 }
-
 .interactive-background {
   position: absolute;
   top: 0;
@@ -684,11 +654,20 @@ transform: translateY(0);
 
 /* Resume Section */
 .resume-section {
-  padding: 40px 20px;
-  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(20px);
   color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
+
+.resume-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 2s;
+  }
 
 .resume-title {
   text-align: center;
@@ -698,9 +677,6 @@ transform: translateY(0);
   margin-bottom: 20px;
 }
 
-.resume-block {
-  margin-bottom: 40px;
-}
 
 .resume-heading {
   font-size: 1.8em;
@@ -718,22 +694,6 @@ transform: translateY(0);
   color: white;
 }
 
-.experience-item, .education-item {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-/* When in view */
-.experience-item.in-view, .education-item.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-.job-info,
-.education-info {
-  margin-bottom: 10px;
-}
-
 .job-title,
 .degree-title {
   font-size: 1.2em;
@@ -749,12 +709,6 @@ transform: translateY(0);
 
 .institution-name {
   font-style: italic;
-  color: white;
-}
-
-.project-details,
-.education-details {
-  padding-left: 20px;
   color: white;
 }
 
