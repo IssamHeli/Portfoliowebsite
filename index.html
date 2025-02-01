@@ -6,18 +6,28 @@
   <title>Issam Heli Portfolio</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" class="iconbrowser" href="Images/IH.png" type="image/x-icon">
-  <meta name="description" content="Showcase of a skilled .NET Core full-stack developer. Proficient in C#, ASP.NET Core, Entity Framework Core, React , SQL Server, and cloud technologies. Explore my projects and experience.">
+
+  <meta name="author" content="Issam Heli">
+  <meta property="og:title" content="Issam Heli Portfolio">
+  <meta property="og:description" content="Showcase of a skilled .NET Core full-stack developer. Proficient in C#, ASP.NET Core, Entity Framework Core, React, SQL Server, and cloud technologies.">
+  <meta property="og:image" content="https://issamheli.github.io/Portfoliowebsite/Images/IH.png">
+  <meta property="og:url" content="https://issamheli.github.io/Portfoliowebsite/">
+  <meta name="twitter:card" content="summary_large_image">
+
   <meta name="Keywords" content=".NET Core, Full-Stack, Web Development, Software Development, Problem Solver, Solutions Architect, C#, ASP.NET Core, Cloud Computing, Portfolio, Innovation, Scalable Applications">
   <meta name="google-site-verification" content="m2z1CKdz3aMzkzDwhRT2BXMgYYqe7UqyFnf6RESJNT0" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 </head>
 <body>
+  <div id="loading-spinner" class="loading-spinner">
+    <div class="spinner"></div>
+    <p class="loading-text">Loading...</p>
+  </div>
   <header>
     <nav class="navbar">
       <div class="logoimgName">
-
-        <img  src="Images/IH.png" class="img-fluid">
+        <img data-src="Images/IH.png" alt="Issam Heli Logo" class="img-fluid">
         <div class="logo">Issam Heli</div>      
       </div>   
       <ul class="nav-links">
@@ -26,6 +36,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#resume">Resume</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="#blog">Blogs</a></li>
       </ul>
       <div class="menu">
         <span></span>
@@ -66,7 +77,7 @@
       <h2 class="section-title">About Me</h2>
       <div class="profile">
         <div class="profile-img-container">
-          <img src="Images/issameheli.enc" alt="Issam Heli" class="profile-img">
+          <img src="Images/issameheli.enc" alt="Issam Heli Profile Picture" class="profile-img">
         </div>
         <div class="profile-text">
           <p class="intro">
@@ -229,6 +240,43 @@
 
   </section>
 
+  <section id="blog" class="blog" alt="Article for Optimizing .NET Core Applications">
+    <h2 class="section-title">Blogs</h2>
+    <div class="blog-posts">
+      <!-- Blog Post 1 -->
+      <article class="blog-post">
+        <img src="https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/2023/2023-02/aspnetcore-type-apps.png?sfvrsn=e0047f75_3" alt="Optimizing .NET Core Applications" class="blog-image">
+        <div class="blog-content">
+          <h3>Optimizing .NET Core Applications for Performance</h3>
+          <p class="blog-meta">Published on: October 10, 2025 | Category: .NET Core</p>
+          <p>Learn how to optimize your .NET Core applications for maximum performance. From caching strategies to database optimization, this guide covers it all.</p>
+          <a href="https://learn.microsoft.com/en-us/aspnet/core/performance/overview?view=aspnetcore-9.0" target="_blank" class="btn">Read More</a>
+        </div>
+      </article>
+  
+      <!-- Blog Post 2 -->
+      <article class="blog-post" alt=" Article for  Building Scalable APIs with ASP.NET Core">
+        <img src="https://blog.treblle.com/content/images/size/w1200/2023/11/treblle-performance-optimization-net-apis.jpg" alt="Building Scalable APIs with ASP.NET Core" class="blog-image">
+        <div class="blog-content">
+          <h3>Building Scalable APIs with ASP.NET Core</h3>
+          <p class="blog-meta">Published on: October 15, 2025 | Category: ASP.NET Core</p>
+          <p>Discover best practices for building scalable and maintainable APIs using ASP.NET Core. Learn about RESTful design, versioning, and security.</p>
+          <a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-9.0&tabs=visual-studio" target="_blank" class="btn">Read More</a>
+        </div>
+      </article>
+  
+      <!-- Blog Post 3 -->
+      <article class="blog-post" alt="Article for Mastering Entity Framework Core">
+        <img src="https://miro.medium.com/v2/resize:fit:1024/1*NZKTxRtZB6TwAjKk51hZ5A.jpeg" alt="Mastering Entity Framework Core" class="blog-image">
+        <div class="blog-content">
+          <h3>Mastering Entity Framework Core: Tips and Tricks</h3>
+          <p class="blog-meta">Published on: October 20, 2025 | Category: Entity Framework Core</p>
+          <p>Unlock the full potential of Entity Framework Core with advanced techniques like lazy loading, query optimization, and migrations.</p>
+          <a href="https://learn.microsoft.com/en-us/ef/core/" target="_blank" class="btn">Read More</a>
+        </div>
+      </article>
+    </div>
+  </section>
   <footer>
     <div class="footer-container">
         <p>&copy; 2025 Issam Heli Portfolio. All rights reserved.</p>
@@ -236,13 +284,13 @@
             <a href="#about">About</a> | 
             <a href="#projects">Projects</a> | 
             <a href="#resume">Resume</a> | 
-            <a href="#contact">Contact</a>
+            <a href="#contact">Contact</a> |
+            <li><a href="#blog">Blogs</a></li>
         </div>
         
     </div>
      
 </footer>   
-  
 </body>
 
 

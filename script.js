@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
       hamburger.classList.remove('activemenu');
     });
   });
+  const images = document.querySelectorAll("img[data-src]");
+  images.forEach(img => {
+    img.src = img.dataset.src;
+  });
+
 });
  
 
@@ -138,6 +143,7 @@ window.addEventListener('scroll', () => {
   });
 });
 
+
 // Smooth scroll for sections
 document.querySelectorAll('.resume-heading').forEach((heading) => {
   heading.addEventListener('click', (event) => {
@@ -178,4 +184,13 @@ $(document).ready(function() {
         errorMessage.style.display = 'block';
       });
   });
+});
+
+
+window.addEventListener('load', () => {
+  const loadingSpinner = document.getElementById('loading-spinner');
+  loadingSpinner.classList.add('hide'); // Fade out
+  setTimeout(() => {
+    loadingSpinner.style.display = 'none'; // Remove from DOM
+  }, 500); // Match the transition duration
 });

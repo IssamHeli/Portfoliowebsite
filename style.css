@@ -1,11 +1,27 @@
 /* General Styles */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --accent-color: #ff0000;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: black;
+    --text-color: white;
+    --accent-color: #ff0000;
+  }
+}
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: black; /* White background */
-    color: white; /* Black text */
+    background: var(--background-color); /* var(--text-color) background */
+    color: var(--text-color); /* var(--background-color) text */
     line-height: 1.6;
-    scrollbar-shadow-color: #ff0000;
+    scrollbar-shadow-color: var(--accent-color);
   }
   
   /* Navbar Styles */
@@ -13,8 +29,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #000; /* Black navbar */
-    color: #fff;
+    background: var(--background-color); /* var(--background-color) navbar */
+    color: var(--text-color);
     padding: 10px 5%;
     width: 100%;
     box-sizing: border-box;
@@ -22,7 +38,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-bottom: 2px solid #ff0000; 
+    border-bottom: 2px solid var(--accent-color); 
   }
   
   .logo {
@@ -44,7 +60,7 @@ body {
   }
   
   .nav-links a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1rem;
     padding: 8px 15px;
@@ -53,8 +69,8 @@ body {
   }
   
   .nav-links a:hover {
-    background-color: #ff0000; /* Red highlight on hover */
-    color: #fff;
+    background-color: var(--accent-color); /* Red highlight on hover */
+    color: var(--text-color);
   }
   
   /* Hamburger Menu */
@@ -64,13 +80,13 @@ body {
     cursor:pointer;
   }
   .menu:hover{
-    color:#ff0000;
+    color:var(--accent-color);
   }
   .menu span {
     display: block;
     height: 4px;
     width: 30px;
-    background: #fff;
+    background: var(--text-color);
     margin: 5px auto;
     border-radius: 2px;
   }
@@ -82,8 +98,8 @@ body {
     right: -300px;
     width: 300px;
     height: 100vh;
-    background: #000; /* Black background */
-    color: #fff;
+    background: var(--background-color); /* var(--background-color) background */
+    color: var(--text-color);
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.3);
     transition: right 0.3s ease;
     z-index: 1000;
@@ -111,13 +127,13 @@ body {
   .sidebar-links a {
     display: block;
     padding: 10px 20px;
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 3rem;
     transition: color 0.3s ease;
   }
   .sidebar-links a:hover {
-    color: #ff0000;
+    color: var(--accent-color);
   }
   
   /* Responsive Design for Mobile */
@@ -151,8 +167,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: black; /* White background */
-    color: white; /* Black text */
+    background: var(--background-color); /* var(--text-color) background */
+    color: var(--text-color); /* var(--background-color) text */
     padding: 20px;
   }
   
@@ -163,16 +179,16 @@ body {
   .hero h1 {
     font-size: 2.5rem;
     margin: 0;
-    color: white;
+    color: var(--text-color);
 }
   
 .hero .highlight {
-  color: #ff0000; /* Red highlight */
+  color: var(--accent-color); /* Red highlight */
 }
 .hero .btn-primary {
   display: inline-block;
-  background: #ff0000; /* Red button */
-  color: #fff;
+  background: var(--accent-color); /* Red button */
+  color: var(--text-color);
   padding: 10px 20px;
   font-size: 1rem;
   border: none;
@@ -188,7 +204,7 @@ body {
   .hero p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: white; /* Dark gray for contrast */
+    color: var(--text-color); /* Dark gray for contrast */
   }
   
   .hero-buttons {
@@ -199,8 +215,8 @@ body {
   .btn {
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    color: #fff;
-    background: whitesmoke;
+    color: var(--text-color);
+    background: var(--text-color)smoke;
     font-weight: bold;
     border-radius: 5px;
     transition: transform 0.3s, background 0.3s;
@@ -216,8 +232,8 @@ body {
   }
   
   .btn-alt {
-    background: white; /* Black button */
-    color: black; /* White text */
+    background: var(--text-color); /* var(--background-color) button */
+    color: var(--background-color); /* var(--text-color) text */
   }
   
   .btn-alt:hover {
@@ -234,7 +250,7 @@ body {
     height: 100%;
     z-index: 1;
     pointer-events: none;
-    background: black; /* Set canvas background to white */
+    background: var(--background-color); /* Set canvas background to var(--text-color) */
   }
   
 
@@ -242,8 +258,8 @@ body {
 
   .about {
     padding: 50px 5%;
-    background: black; /* Light gray background */
-    color: white; /* Black text */
+    background: var(--background-color); /* Light gray background */
+    color: var(--text-color); /* var(--background-color) text */
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
@@ -257,11 +273,11 @@ body {
 
 .about h2 {
   font-size: 2rem;
-  color: white;
+  color: var(--text-color);
 }
 
 .about .profile-text .highlight {
-  color: #ff0000; /* Red highlight */
+  color: var(--accent-color); /* Red highlight */
 }
 
 
@@ -269,7 +285,7 @@ body {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: white;
+    color: var(--text-color);
     text-transform: uppercase;
     margin-bottom: 20px;
   }
@@ -289,7 +305,7 @@ body {
   .profile-img {
     max-width: 100%;
     border-radius: 50%;
-    box-shadow:0px 0px 30px #ff0000;
+    box-shadow:0px 0px 30px var(--accent-color);
     transition: transform 0.3s ease;
   }
   
@@ -301,11 +317,11 @@ body {
     flex: 2 1 300px;
     font-size: 1rem;
     line-height: 1.6;
-    color: whitesmoke;
+    color: var(--text-color)smoke;
     text-align: left;
   }
   .intro strong{
-    color: #ff0000;
+    color: var(--accent-color);
   }
   .profile-text .highlight {
     color: #333;
@@ -316,8 +332,8 @@ body {
     display: inline-block;
     margin-top: 1.5rem;
     padding: 0.75rem 1.5rem;
-    background: #ff0000;
-    color: #fff;
+    background: var(--accent-color);
+    color: var(--text-color);
     border: none;
     border-radius: 5px;
     text-transform: uppercase;
@@ -346,8 +362,8 @@ body {
   /* Projects Section */
 .projects {
     padding: 50px 10%;
-    background: black;
-    color: white;
+    background: var(--background-color);
+    color: var(--text-color);
   }
   .projects h2 {
     font-size: 2rem;
@@ -369,31 +385,36 @@ body {
   .project-item {
     margin: 20px 0;
     padding: 20px;
-    background: #500a0a; /* Light gray background */
-    color: white; /* Black text */
+    background: #1a1a1a; /* Light gray background */
+    color: var(--text-color); /* var(--background-color) text */
     border-radius: 5px;
-    box-shadow: 0 2px 5px #ff0000;
+    box-shadow: 0 2px 5px var(--accent-color);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-  
+  .project-item:hover{
+   
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(255, 0, 0, 0.5);
+  }
   .project-item img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    background: black;
+    background: var(--background-color);
   }
   
   .project-item h3 {
     font-size: 1.5rem;
     margin-top: 15px;
+    color: var(--accent-color);
   }
   
   .project-item .btn {
     display: inline-block;
-    background: #ff0000; /* Red button */
-    color: #fff;
+    background: var(--accent-color); /* Red button */
+    color: var(--text-color);
     padding: 10px 15px;
     font-size: 1rem;
     border: none;
@@ -405,6 +426,8 @@ body {
   
   .project-item .btn:hover {
     background: #cc0000; /* Darker red on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
   }
 
   .project-item a {
@@ -446,14 +469,14 @@ body {
   }
   
   .contact-details a {
-    color: #4a90e2;
+    color: var(--text-color);
     text-decoration: none;
   }
   
   .contact .btn {
     display: inline-block;
-    background: #ff0000; /* Red button */
-    color: #fff;
+    background: var(--accent-color); /* Red button */
+    color: var(--text-color);
     padding: 10px 20px;
     font-size: 1rem;
     border: none;
@@ -465,6 +488,8 @@ body {
   
   .contact .btn:hover {
     background: #cc0000; /* Darker red on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
   }
       
   /* Responsive Hero Section */
@@ -490,14 +515,14 @@ body {
  /* Footer Section */
 footer {
   padding: 20px 5%;
-  background: #000; /* Black footer */
-  color: #fff; /* White text */
+  background: var(--background-color); /* var(--background-color) footer */
+  color: var(--text-color); /* var(--text-color) text */
   text-align: center;
-  border-top: 2px solid #ff0000; /* Red border for emphasis */
+  border-top: 2px solid var(--accent-color); /* Red border for emphasis */
 }
 
 footer a {
-  color: #ff0000; /* Red links */
+  color: var(--accent-color); /* Red links */
   text-decoration: none;
 }
 
@@ -532,7 +557,7 @@ transition: 2s;
 
 .bubble {
   position: absolute;
-  background: #ff0000;
+  background: var(--accent-color);
   border-radius: 50%;
   animation: floatUp 5s infinite ease-in-out;
 }
@@ -569,9 +594,9 @@ transition: 2s;
   max-width: 800px;
   margin: 0 auto;
   background: #430808;
-  color: white;
+  color: var(--text-color);
   border-radius: 8px;
-  box-shadow: 0 4px 8px #ff0000;
+  box-shadow: 0 4px 8px var(--accent-color);
   padding: 20px;
 }
 
@@ -597,8 +622,8 @@ transition: 2s;
 }
 
 .form-input:focus, .form-textarea:focus {
-  border-color: #ff0000;
-  box-shadow: 0 0 5px #ff0000;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px var(--accent-color);
 }
 
 .form-textarea {
@@ -607,8 +632,8 @@ transition: 2s;
 }
 
 .btn-submit {
-  background-color: #ff0000;
-  color: #fff;
+  background-color: var(--accent-color);
+  color: var(--text-color);
   border: none;
   padding: 12px 20px;
   border-radius: 4px;
@@ -656,7 +681,7 @@ transition: 2s;
 .resume-section {
   opacity: 0;
   transform: translateY(20px);
-  color: white;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -673,15 +698,15 @@ transition: 2s;
   text-align: center;
   font-size: 2.5em;
   font-weight: bold;
-  color: white;
+  color: var(--text-color);
   margin-bottom: 20px;
 }
 
 
 .resume-heading {
   font-size: 1.8em;
-  color: white;
-  border-left: 5px solid #ff0000;
+  color: var(--text-color);
+  border-left: 5px solid var(--accent-color);
   padding-left: 10px;
   margin-bottom: 15px;
 }
@@ -691,7 +716,7 @@ transition: 2s;
 .education-list {
   list-style: none;
   padding: 0;
-  color: white;
+  color: var(--text-color);
 }
 
 .job-title,
@@ -709,7 +734,7 @@ transition: 2s;
 
 .institution-name {
   font-style: italic;
-  color: white;
+  color: var(--text-color);
 }
 
 /* Animations */
@@ -731,7 +756,7 @@ transition: 2s;
 
 .social-title {
   font-size: 1.5em;
-  color: white;
+  color: var(--text-color);
   margin-bottom: 15px;
 }
 
@@ -762,4 +787,121 @@ transition: 2s;
 /* Font Awesome Icons Styling */
 .social-link i {
   margin-right: 8px;
+}
+
+
+.loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it's on top of everything */
+  transition: opacity 0.5s ease;
+}
+
+/* Spinner Animation */
+.spinner {
+  border: 6px solid rgba(255, 255, 255, 0.3); /* Light gray border */
+  border-top: 6px solid #ff0000; /* Red border for the spinner */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite; /* Spin animation */
+}
+.loading-spinner.hide {
+  opacity: 0;
+  pointer-events: none; /* Disable interactions */
+}
+/* Keyframes for Spinner Rotation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  color: white;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Blog Section */
+.blog {
+  padding: 50px 10%;
+  background: black;
+  color: white;
+}
+
+.blog h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.blog-posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.blog-post {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(255, 0, 0, 0.5);
+}
+
+.blog-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 20px;
+}
+
+.blog-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ff0000;
+}
+
+.blog-meta {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.blog-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.blog-content .btn {
+  background: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.blog-content .btn:hover {
+  background: #cc0000;
 }
