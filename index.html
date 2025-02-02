@@ -102,6 +102,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#resume">Resume</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#blog">Blogs</a></li>
     </ul>
   </div>
 
@@ -124,28 +125,65 @@
     <div class="container">
       <h2 class="section-title">About Me</h2>
       <div class="profile">
+        <!-- Profile Image -->
         <div class="profile-img-container">
-          <img src="Images/issameheli.enc" alt="Issam Heli Profile Picture" class="profile-img">
+          <img src="Images/issameheli.enc" alt="Issam Heli" class="profile-img">
         </div>
+  
+        <!-- Profile Text -->
         <div class="profile-text">
           <p class="intro">
-            I am <span class="highlight">Issam Heli</span>, a dedicated <strong>.NET Core Full-Stack Developer</strong> with extensive experience in crafting dynamic web applications. My expertise includes <strong>.NET Core</strong>, <strong>ASP.NET Core</strong>, <strong>ASP.NET Core MVC</strong>, <strong>API Web ASP.NET Core</strong>, <strong>Entity Framework (EF) Core</strong>, <strong>JSON Web Token (JWT)</strong>, <strong>Microsoft SQL Server</strong>, <strong>C#</strong>, <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>Feuilles de style en cascade (CSS)</strong>, <strong>Bootstrap</strong>, <strong>jQuery</strong>, <strong>AJAX</strong>, and <strong>Blazor</strong>. These technologies empower me to create scalable, efficient, and professional solutions.
-
+            Hi, I'm <span class="highlight">Issam Heli</span>, a passionate and results-driven <strong>.NET Core Full-Stack Developer</strong> with a strong focus on building scalable, efficient, and user-friendly web applications. With expertise in <strong>.NET Core</strong>, <strong>ASP.NET Core</strong>, <strong>Entity Framework Core</strong>, and modern front-end technologies, I bring ideas to life through clean, maintainable, and high-performance code.
           </p>
-          <p class="commitment">
-            Committed to delivering high-quality code, I continually seek opportunities to expand my knowledge and proficiency in emerging tools and technologies to enhance my development skills.
+  
+          <!-- Skills List -->
+          <div class="skills">
+            <h3>Technical Skills</h3>
+            <ul class="skills-list">
+              <li><i class="fas fa-code"></i> <strong>.NET Core</strong> - Building robust backend systems.</li>
+              <li><i class="fas fa-server"></i> <strong>ASP.NET Core</strong> - Developing RESTful APIs and MVC applications.</li>
+              <li><i class="fas fa-database"></i> <strong>Entity Framework Core</strong> - Efficient database management and optimization.</li>
+              <li><i class="fas fa-paint-brush"></i> <strong>React & Blazor</strong> - Crafting dynamic and responsive user interfaces.</li>
+              <li><i class="fas fa-cloud"></i> <strong>Cloud Technologies</strong> - Deploying applications on Azure and AWS.</li>
+              <li><i class="fas fa-tools"></i> <strong>DevOps</strong> - CI/CD pipelines and containerization with Docker.</li>
+            </ul>
+          </div>
+  
+          <!-- Fun Fact -->
+          <p class="fun-fact">
+            <i class="fas fa-lightbulb"></i> Fun Fact: I once built a fully functional e-commerce website cash-on-delivery in just 48 hours!
           </p>
+  
+          <!-- Call to Action -->
+          <div class="cta">
+            <a href="#projects" class="btn btn-primary">View My Projects</a>
+            <a href="#contact" class="btn btn-alt">Get in Touch</a>
+          </div>
+  
+          <!-- Social Media Links -->
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/issam-heli" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/IssamHeli" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:heli.issame@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
         </div>
       </div>
-
     </div>
-  </section>  
+  </section>
+
+
   <section id="projects" class="projects">
     <div class="container">
       <h2>My Projects</h2>
       <div class="project-list">
         <div class="project-item">
-          <img src="Images/GestionMagazinLogo1.png" style="height: 300px;" alt="Project 1">
+          <img src="Images/GestionMagazinLogo1.png" style="height: 300px;" alt="Project 1" loading="lazy">
           <h3>GstMagasin</h3>
           <p>Your all-in-one solution for efficient store management. Optimize your operations and boost productivity with our platform designed for small and large retail businesses.</p>
           <a href="https://gstmag.azurewebsites.net/" target="_blank" class="btn">View  WebSite</a>
@@ -154,7 +192,7 @@
         </div>
 
         <div class="project-item">
-          <img src="Images/logo.webp" alt="Project 2">
+          <img src="Images/logo.webp" alt="Project 2" loading="lazy">
           <h3>PriorityClips</h3>
           <p>Where video curation meets excellence .
             Experience the essence of quality content, prioritized for your viewing pleasure .
@@ -165,7 +203,7 @@
           </div>
 
         <div class="project-item">
-          <img src="Images/SiteWebLogoUrl.png" alt="Project 1">
+          <img src="Images/SiteWebLogoUrl.png" alt="Project 1" loading="lazy">
           <h3>Studio El Horia </h3>
           <p>Studio El Horia is a professional photography and videography studio specializing in capturing unforgettable moments. With over 21 years of experience, the studio offers services such as wedding photography, event coverage, aerial shots, and creative services.</p> 
           <a href="https://issamheli.github.io/Studio-El-Horia/" target="_blank" class="btn">View WebSite</a>
@@ -174,7 +212,7 @@
         </div>
 
         <div class="project-item">
-          <img src="Images/ecommercewebsite.svg" alt="Project 1">
+          <img src="Images/ecommercewebsite.svg" alt="Project 1" loading="lazy">
           <h3>EcommerceWebSite </h3>
           <p>This is a feature-rich e-commerce web application built using modern technologies. The application supports a cash-on-delivery model and provides functionalities for managing products, orders, and more. It includes a user-friendly interface for customers and an admin dashboard for managing the platform.</p>
           <a href="https://github.com/issamheli/EcommerceWebSite" target="_blank" class="btn">Github</a>
@@ -182,7 +220,7 @@
        
         <!-- Add more projects as needed -->
         <div class="project-item">
-            <img src="Images/ApiToolsApp.webp" alt="Project 1">
+            <img src="Images/ApiToolsApp.webp" alt="Project 1" loading="lazy">
             <h3>AiToolsApp</h3>
             <p>APIToolsApp is an innovative platform designed to deliver powerful API-driven solutions for various industries, including data analytics, software development, scientific research, and enhanced search functionalities. Empower your applications with seamless integration and advanced features.</p>
             <p>Note : Not Finished</p>
@@ -248,7 +286,7 @@
         <h2 class="social-title">Connect with Me</h2>
         <ul class="social-icons">
           <li>
-            <a href="https://www.linkedin.com/in/issam-heli-534689244/" target="_blank" class="social-link">
+            <a href="https://www.linkedin.com/in/issam-heli" target="_blank" class="social-link">
               <i class="fab fa-linkedin"></i> LinkedIn
             </a>
           </li>
@@ -293,7 +331,7 @@
     <div class="blog-posts">
       <!-- Blog Post 1 -->
       <article class="blog-post">
-        <img src="Images/blogpost1.png" alt="Optimizing .NET Core Applications" class="blog-image">
+        <img src="Images/blogpost1.png" alt="Optimizing .NET Core Applications" class="blog-image" loading="lazy">
         <div class="blog-content">
           <h3>Optimizing .NET Core Applications for Performance</h3>
           <p class="blog-meta">Published on: October 10, 2025 | Category: .NET Core</p>
@@ -304,7 +342,7 @@
   
       <!-- Blog Post 2 -->
       <article class="blog-post" alt=" Article for  Building Scalable APIs with ASP.NET Core">
-        <img src="Images/blogpost2.jpeg" alt="Building Scalable APIs with ASP.NET Core" class="blog-image">
+        <img src="Images/blogpost2.jpeg" alt="Building Scalable APIs with ASP.NET Core" class="blog-image" loading="lazy">
         <div class="blog-content">
           <h3>Building Scalable APIs with ASP.NET Core</h3>
           <p class="blog-meta">Published on: October 15, 2025 | Category: ASP.NET Core</p>
@@ -315,7 +353,7 @@
   
       <!-- Blog Post 3 -->
       <article class="blog-post" alt="Article for Mastering Entity Framework Core">
-        <img src="Images/blogpost3.jpeg" alt="Mastering Entity Framework Core" class="blog-image">
+        <img src="Images/blogpost3.jpeg" alt="Mastering Entity Framework Core" class="blog-image" loading="lazy">
         <div class="blog-content">
           <h3>Mastering Entity Framework Core: Tips and Tricks</h3>
           <p class="blog-meta">Published on: October 20, 2025 | Category: Entity Framework Core</p>
@@ -333,7 +371,7 @@
             <a href="#projects">Projects</a> | 
             <a href="#resume">Resume</a> | 
             <a href="#contact">Contact</a> |
-            <li><a href="#blog">Blogs</a></li>
+            <a href="#blog">Blogs</a>
         </div>
         
     </div>

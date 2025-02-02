@@ -121,7 +121,7 @@ body {
   }
   
   .sidebar-links li {
-    margin: 20px 0;
+    margin: 10px 0;
   }
   
   .sidebar-links a {
@@ -129,7 +129,7 @@ body {
     padding: 10px 20px;
     color: var(--text-color);
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 2.5rem;
     transition: color 0.3s ease;
   }
   .sidebar-links a:hover {
@@ -254,110 +254,167 @@ body {
   }
   
 
-
-
-  .about {
-    padding: 50px 5%;
-    background: var(--background-color); /* Light gray background */
-    color: var(--text-color); /* var(--background-color) text */
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
- .about.in-view {
-  opacity: 1;
-  transform: translateY(0);
-  transition: 2s;
- }
-
-.about h2 {
-  font-size: 2rem;
-  color: var(--text-color);
+/* About Section */
+.about {
+  padding: 80px 10%;
+  background: black;
+  color: white;
 }
 
-.about .profile-text .highlight {
-  color: var(--accent-color); /* Red highlight */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: white;
+  text-transform: uppercase;
 }
 
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
 
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: var(--text-color);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  
+.profile-img-container {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.profile-img {
+  max-width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #ff0000;
+  transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+.profile-text {
+  flex: 2 1 400px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: whitesmoke;
+}
+
+.profile-text .highlight {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+/* Skills List */
+.skills {
+  margin-top: 20px;
+}
+
+.skills h3 {
+  font-size: 1.5rem;
+  color: #ff0000;
+  margin-bottom: 15px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.skills-list i {
+  color: #ff0000;
+  margin-right: 10px;
+}
+
+.skills-list strong {
+  color: #ff0000;
+}
+
+/* Fun Fact */
+.fun-fact {
+  margin-top: 20px;
+  font-style: italic;
+  color: #888;
+}
+
+.fun-fact i {
+  color: #ff0000;
+  margin-right: 10px;
+}
+
+/* Call to Action */
+.cta {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-primary {
+  background: #ff0000;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #cc0000;
+  transform: translateY(-3px);
+}
+
+.btn-alt {
+  background: white;
+  color: black;
+}
+
+.btn-alt:hover {
+  background: #d67474;
+  transform: translateY(-3px);
+}
+
+/* Social Media Links */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ff0000;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .profile {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 2rem;
-  }
-  
-  .profile-img-container {
-    flex: 1 1 250px;
+    flex-direction: column;
     text-align: center;
   }
-  
-  .profile-img {
-    max-width: 100%;
-    border-radius: 50%;
-    box-shadow:0px 0px 30px var(--accent-color);
-    transition: transform 0.3s ease;
-  }
-  
-  .profile-img:hover {
-    transform: scale(1.05);
-  }
-  
+
   .profile-text {
-    flex: 2 1 300px;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--text-color)smoke;
     text-align: left;
   }
-  .intro strong{
-    color: var(--accent-color);
+
+  .cta {
+    flex-direction: column;
+    align-items: center;
   }
-  .profile-text .highlight {
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .profile-text .btn-primary {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    background: var(--accent-color);
-    color: var(--text-color);
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
-  }
-  
-  .profile-text .btn-primary:hover {
-    background: #cc0000; /* Darker red on hover */
-  }
-  
-  @media screen and (max-width: 768px) {
-    .profile {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .profile-img-container,
-    .profile-text {
-      flex: 1 1 auto;
-    }
-  }
-  
+}
 
   /* Projects Section */
 .projects {
@@ -458,7 +515,6 @@ body {
   
  
 /* Contact Section */
-
   .contact h2 {
     font-size: 2rem;
     margin-bottom: 20px;
@@ -855,9 +911,8 @@ transition: 2s;
 .blog-post {
   background: #1a1a1a;
   border-radius: 10px;
-  overflow: hidden;
+  opacity: 0;
   box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-post:hover {
@@ -905,3 +960,10 @@ transition: 2s;
 .blog-content .btn:hover {
   background: #cc0000;
 }
+
+.blog-post.in-view {
+   
+  opacity: 1;
+  transform: translateY(0); 
+  transition: 2s;
+  }

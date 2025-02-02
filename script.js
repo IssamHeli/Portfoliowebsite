@@ -128,7 +128,7 @@ const interactiveBackground = document.getElementById('interactiveBackground');
 
 // Trigger animations on scroll for experience and education items
 window.addEventListener('scroll', () => {
-  const elements = document.querySelectorAll('.about , .project-item, .resume-section,.contact-section');
+  const elements = document.querySelectorAll('.about , .project-item, .resume-section,.contact-section,.blog-post');
 
   elements.forEach((el) => {
     const rect = el.getBoundingClientRect();
