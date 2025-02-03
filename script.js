@@ -23,9 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
- 
 
-  const canvas = document.getElementById("hero-canvas");
+const SidebarButton = document.getElementById('theme-toggle-sidebar');
+
+const Hamburger = document.querySelector('.menu');
+const Sidebar = document.querySelector('.sidebar');
+SidebarButton.addEventListener('click',()=>{
+ 
+  Sidebar.classList.remove('active');
+
+  Hamburger.classList.remove('active');
+});
+
+const canvas = document.getElementById("hero-canvas");
 const ctx = canvas.getContext("2d");
 
 // Resize canvas
