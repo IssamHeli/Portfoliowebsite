@@ -98,33 +98,44 @@ window.addEventListener("resize", () => {
   canvas.height = window.innerHeight;
 });
 
-
 const interactiveBackground = document.getElementById('interactiveBackground');
+let animationInterval;
+let isAnimating = false;
 
-    function createBubble() {
-      const bubble = document.createElement('div');
-      bubble.classList.add('bubble');
+function createBubble() {
+  const bubble = document.createElement('div');
+  bubble.classList.add('bubble');
+  
+  const size = Math.random() * 60 + 20;
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+  bubble.style.left = `${Math.random() * 100}%`;
+  bubble.style.bottom = '-80px';
+  bubble.style.animationDuration = `${Math.random() * 5 + 5}s`;
 
-      const size = Math.random() * 60 + 20; // Random size between 20px and 80px
-      bubble.style.width = `${size}px`;
-      bubble.style.height = `${size}px`;
+  interactiveBackground.appendChild(bubble);
 
-      bubble.style.left = `${Math.random() * 100}%`; // Random horizontal position
-      bubble.style.bottom = '-80px'; // Start below the visible area
-      bubble.style.animationDuration = `${Math.random() * 5 + 5}s`; // Random duration between 5s and 10s
+  bubble.addEventListener('animationend', () => {
+    bubble.remove();
+  });
+}
 
-      interactiveBackground.appendChild(bubble);
-
-      // Remove bubble after animation ends
-      bubble.addEventListener('animationend', () => {
-        bubble.remove();
-      });
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !isAnimating) {
+      isAnimating = true;
+      // Start creating bubbles
+      animationInterval = setInterval(createBubble, 500);
+      // Stop after 10 seconds (10000 milliseconds)
+      setTimeout(() => {
+        clearInterval(animationInterval);
+        isAnimating = false;
+      }, 10000);
     }
+  });
+}, { threshold: 0.3 }); // Trigger when 50% of element is visible
 
-    // Generate bubbles periodically
-    setInterval(createBubble, 500);
-
-    
+observer.observe(interactiveBackground);
 
 // Trigger animations on scroll for experience and education items
 window.addEventListener('scroll', () => {
