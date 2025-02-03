@@ -298,7 +298,8 @@ body {
 }
 
 .profile-img {
-  max-width: 100%;
+  width:100%;
+  height: auto;
   border-radius: 50%;
   box-shadow: 0 0 30px #ff0000;
   transition: transform 0.3s ease;
