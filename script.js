@@ -120,23 +120,32 @@ function createBubble() {
   });
 }
 
+function clearAllBubbles() {
+  const bubbles = interactiveBackground.querySelectorAll('.bubble');
+  bubbles.forEach(bubble => bubble.remove());
+}
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting && !isAnimating) {
-      isAnimating = true;
-      // Start creating bubbles
-      animationInterval = setInterval(createBubble, 500);
-      // Stop after 10 seconds (10000 milliseconds)
-      setTimeout(() => {
-        clearInterval(animationInterval);
-        isAnimating = false;
-      }, 10000);
+    if (entry.isIntersecting) {
+      if (!isAnimating) {
+        isAnimating = true;
+        animationInterval = setInterval(createBubble, 500);
+        setTimeout(() => {
+          clearInterval(animationInterval);
+          isAnimating = false;
+        }, 10000);
+      }
+    } else {
+      // When leaving view
+      clearInterval(animationInterval);
+      isAnimating = false;
+      clearAllBubbles();
     }
   });
-}, { threshold: 0.3 }); // Trigger when 50% of element is visible
+}, { threshold: 0.5 });
 
 observer.observe(interactiveBackground);
-
 // Trigger animations on scroll for experience and education items
 window.addEventListener('scroll', () => {
   const elements = document.querySelectorAll('.about , .project-item, .resume-section,.container1,.blog-post');
