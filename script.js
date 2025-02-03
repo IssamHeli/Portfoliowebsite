@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Toggle the 'active' class on hamburger click to show/hide the sidebar
   hamburger.addEventListener('click', () => {
     sidebar.classList.toggle('active');
-    hamburger.classList.toggle('activemenu');
+    hamburger.classList.toggle('active');
   });
 
   // Add event listener to hide the sidebar when a link is clicked
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', () => {
       sidebar.classList.remove('active'); // Remove the 'active' class to hide the sidebar
 
-      hamburger.classList.remove('activemenu');
+      hamburger.classList.remove('active');
     });
   });
   const images = document.querySelectorAll("img[data-src]");

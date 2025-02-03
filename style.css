@@ -73,25 +73,25 @@ body {
   /* Hamburger Menu */
   .menu {
     display: none;
-    flex-direction: column;
-    cursor:pointer;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
   }
-  .menu:hover{
-    color:var(--accent-color);
-  }
+  
   .menu span {
     display: block;
-    height: 4px;
-    width: 30px;
-    background: var(--text-color);
-    margin: 5px auto;
-    border-radius: 2px;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: all 0.3s ease;
   }
   
   /* Sidebar Menu (right side) */
   .sidebar {
     position: fixed;
-    top: 72px;
+    top: 80px;
     right: -300px;
     width: 300px;
     height: 100vh;
@@ -103,12 +103,7 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
-  
-.sidebar.active {
-  right: 0;
-}
 
 
   .sidebar-links {
@@ -118,7 +113,7 @@ body {
   }
   
   .sidebar-links li {
-    margin: 10px 0;
+    margin: 5px 0;
   }
   
   .sidebar-links a {
@@ -126,7 +121,7 @@ body {
     padding: 10px 20px;
     color: var(--text-color);
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: 3rem;
     transition: color 0.3s ease;
   }
   .sidebar-links a:hover {
@@ -136,9 +131,16 @@ body {
   /* Responsive Design for Mobile */
   @media (max-width: 768px) {
     /* Show hamburger menu */
-    .menu {
-      display: flex;
+    
+    .navbar {
+      flex-wrap: nowrap;
+      padding: 1rem;
     }
+  
+    .menu {
+      display: block;
+    }
+  
     
     /* Hide nav-links, as sidebar will be used */
     .nav-links {
@@ -149,15 +151,23 @@ body {
     .sidebar.active {
       right: 0;  /* Slide the sidebar in from the right */
     }
+    .nav-links.active {
+      max-height: 500px; /* Adjust based on content height */
+      padding: 1rem 0;
+    }
+    .menu.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+  
+    .menu.active span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    .menu.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
   }
-
-  .activemenu {
-    flex-direction: row;
-    width: 50px;
-    animation: floatUp1 5s infinite ease-in-out;
-    gap: 5px;
-    border-radius: 1px;
-  }
+  
   .hero {
     height: 100vh;
     display: flex;
