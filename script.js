@@ -128,7 +128,7 @@ const interactiveBackground = document.getElementById('interactiveBackground');
 
 // Trigger animations on scroll for experience and education items
 window.addEventListener('scroll', () => {
-  const elements = document.querySelectorAll('.about , .project-item, .resume-section,.contact-section,.blog-post');
+  const elements = document.querySelectorAll('.about , .project-item, .resume-section,.container1,.blog-post');
 
   elements.forEach((el) => {
     const rect = el.getBoundingClientRect();
@@ -194,3 +194,50 @@ window.addEventListener('load', () => {
     loadingSpinner.style.display = 'none'; // Remove from DOM
   }, 500); // Match the transition duration
 });
+
+// Function to set the theme
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  updateButtonIcons(theme); // Update the button icons based on the theme
+}
+
+// Function to toggle between dark and light themes
+function toggleTheme() {
+  const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
+}
+
+// Function to update the button icons based on the current theme
+function updateButtonIcons(theme) {
+  const navButton = document.getElementById('theme-toggle-nav');
+  const sidebarButton = document.getElementById('theme-toggle-sidebar');
+
+  if (theme === 'dark') {
+    navButton.innerHTML = '<i class="fas fa-sun"></i>'; // Sun icon for dark theme
+    sidebarButton.innerHTML = '<i class="fas fa-sun"></i>';
+  } else {
+    navButton.innerHTML = '<i class="fas fa-moon"></i>'; // Moon icon for light theme
+    sidebarButton.innerHTML = '<i class="fas fa-moon"></i>';
+  }
+}
+
+// Event listeners for the theme toggle buttons
+document.getElementById('theme-toggle-nav').addEventListener('click', toggleTheme);
+document.getElementById('theme-toggle-sidebar').addEventListener('click', toggleTheme);
+
+// Initialize the theme based on user preference or saved theme
+function initializeTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+}
+
+// Initialize the theme when the page loads
+initializeTheme();
