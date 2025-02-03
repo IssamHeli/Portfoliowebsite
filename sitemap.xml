@@ -1,15 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+                            http://www.google.com/schemas/sitemap-image/1.1 
+                            http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://issamheli.github.io/Portfoliowebsite/</loc>
+    <lastmod>2024-07-20</lastmod> <!-- Update to current date -->
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://issamheli.github.io/Portfoliowebsite/Images/IH.webp</image:loc>
+      <image:title>Issam Heli Logo</image:title>
+    </image:image>
+  </url>
 
+  <!-- Other Important Pages -->
+  <url>
+    <loc>https://issamheli.github.io/Portfoliowebsite/#about</loc>
+    <lastmod>2024-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-  <loc>https://issamheli.github.io/Portfoliowebsite/</loc>
-  <lastmod>2025-01-16T21:36:03+00:00</lastmod>
-</url>
+  <url>
+    <loc>https://issamheli.github.io/Portfoliowebsite/#projects</loc>
+    <lastmod>2024-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
+  <url>
+    <loc>https://issamheli.github.io/Portfoliowebsite/#blog</loc>
+    <lastmod>2024-07-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <!-- Include blog post images -->
+    <image:image>
+      <image:loc>https://issamheli.github.io/Portfoliowebsite/Images/blogpost1.webp</image:loc>
+      <image:title>Optimizing .NET Core Applications</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://issamheli.github.io/Portfoliowebsite/Images/blogpost2.webp</image:loc>
+      <image:title>Building Scalable APIs</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://issamheli.github.io/Portfoliowebsite/Images/blogpost3.webp</image:loc>
+      <image:title>Entity Framework Core Tips</image:title>
+    </image:image>
+  </url>
 
+  <!-- Add other pages similarly -->
 </urlset>
