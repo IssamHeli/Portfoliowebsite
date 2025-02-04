@@ -187,11 +187,36 @@ $(document).ready(function() {
 
     const form = this;
     const Name = document.getElementById('name').value.trim();
-    const Email = document.getElementById('email').value.trim(); // Fixed missing id
+    const Email = document.getElementById('email').value.trim();
     const Message = document.getElementById('message').value.trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const successMessage = document.getElementById('successMessage');
     const errorMessage = document.getElementById('errorMessage');
+
+    if (!Name) {
+      errorMessage.textContent = 'Please enter your name.';
+      errorMessage.style.display = 'block';
+      return;
+    }
+
+    if (!Email) {
+      errorMessage.textContent = 'Please enter your Email.';
+      errorMessage.style.display = 'block';
+      return;
+    } 
+    if (!emailPattern.test(Email)) {
+      errorMessage.textContent = 'Please enter Valid Email Adresse.';
+      errorMessage.style.display = 'block';
+      return;
+    }
+
+    if (!Message) {
+      errorMessage.textContent = 'Please enter Your Message';
+      errorMessage.style.display = 'block';
+      return;
+    }
 
     successMessage.style.display = 'none';
     errorMessage.style.display = 'none';
