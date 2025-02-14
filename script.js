@@ -35,6 +35,12 @@ SidebarButton.addEventListener('click',()=>{
   Hamburger.classList.remove('active');
 });
 
+
+
+
+
+
+
 const canvas = document.getElementById("hero-canvas");
 const ctx = canvas.getContext("2d");
 
